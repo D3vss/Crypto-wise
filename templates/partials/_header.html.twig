@@ -23,11 +23,20 @@
 					</li>
 				</ul>
 			</div>
-			<div class="nav-item">
-				<button type="button" class="btn btn-primary mr-1" onclick="location.href='/login'">Login</button>
+			{% if app.user %}
+				<div class="nav-item">
+					<button type="button" class="btn btn-primary mr-1" onclick="location.href='/logout'">Log out</button>
+				</div>
 
-				<button type="button" class="btn btn-outline-primary" onclick="location.href='/register'">Sign up</button>
-			</div>
+			{% else %}
+				<div class="nav-item">
+					<button type="button" class="btn btn-primary mr-1" onclick="location.href='/login'">Login</button>
+
+					<button type="button" class="btn btn-outline-primary" onclick="location.href='/register'">Sign up</button>
+				</div>
+
+			{% endif %}
+
 		</div>
 	</div>
 </nav>
